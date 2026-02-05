@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://DilshaPrathibha.github.io/portfolio",
+  "homepage": "https://DilshaPrathibha.github.io/Portfolio",
   "dependencies": {
     "autoprefixer": "^10.4.24",
     "framer-motion": "^12.31.0",

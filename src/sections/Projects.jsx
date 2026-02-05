@@ -1,7 +1,7 @@
 
 import SectionWrapper from '../components/SectionWrapper';
 import { portfolioData } from '../data/portfolioData';
-import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
+import { Github, ExternalLink, FolderGit2, Figma } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Projects = () => {
@@ -29,7 +29,7 @@ const Projects = () => {
                         {project.imageUrl && (
                             <div className="h-48 overflow-hidden relative">
                                 <img
-                                    src={project.imageUrl}
+                                    src={`${import.meta.env.BASE_URL}${project.imageUrl.replace(/^\//, '')}`}
                                     alt={project.title}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     onError={(e) => { e.target.style.display = 'none'; }}
@@ -63,6 +63,17 @@ const Projects = () => {
                                             title="Live Demo"
                                         >
                                             <ExternalLink size={20} />
+                                        </a>
+                                    )}
+                                    {project.uiDesignUrl && (
+                                        <a
+                                            href={project.uiDesignUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-slate-400 hover:text-violet-600 dark:hover:text-white transition-colors"
+                                            title="UI Design"
+                                        >
+                                            <Figma size={20} />
                                         </a>
                                     )}
                                 </div>
