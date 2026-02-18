@@ -13,3 +13,24 @@ body {
 .dark body {
   @apply bg-slate-900 text-slate-100;
 }
+
+/* Blinking text cursor via ::after pseudo-element — pure CSS */
+@keyframes cursor-blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.typing-cursor::after {
+  content: '|';
+  color: #8b5cf6;
+  font-weight: 300;
+  margin-left: 2px;
+  animation: cursor-blink 1s ease-in-out infinite;
+}

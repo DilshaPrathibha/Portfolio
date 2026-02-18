@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { portfolioData } from '../data/portfolioData';
 import { Github, ExternalLink, FolderGit2, Figma, ChevronDown } from 'lucide-react';
@@ -7,28 +7,86 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
     const [showAll, setShowAll] = useState(false);
-    const projectsToShow = showAll ? portfolioData.projects : portfolioData.projects.slice(0, 6);
+    const [activeFilter, setActiveFilter] = useState('All');
+
+    // Derive unique categories from projects
+    const categories = useMemo(() => {
+        const cats = new Set(portfolioData.projects.map((p) => p.category).filter(Boolean));
+        return ['All', ...cats];
+    }, []);
+
+    // Filter, then paginate
+    const filteredProjects = useMemo(() => {
+        if (activeFilter === 'All') return portfolioData.projects;
+        return portfolioData.projects.filter((p) => p.category === activeFilter);
+    }, [activeFilter]);
+
+    const projectsToShow = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
     return (
         <SectionWrapper id="projects">
-            <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                    Featured Projects
-                </h2>
-                <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
+            <div className="mb-12 text-center">
+                <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-sm font-semibold tracking-[0.2em] uppercase text-violet-600 dark:text-violet-400 mb-3"
+                >
+                    My Work
+                </motion.p>
+                <motion.h2
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white"
+                >
+                    Featured{' '}
+                    <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
+                        Projects
+                    </span>
+                </motion.h2>
+                <div className="mx-auto mt-4 mb-4 w-16 h-1 rounded-full bg-gradient-to-r from-violet-600 to-indigo-500" />
+                <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.15 }}
+                    className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8"
+                >
                     Here are some of the key projects I've worked on, ranging from web applications to mobile apps.
-                </p>
+                </motion.p>
+
+                {/* Category Filter Tabs */}
+                <div className="flex flex-wrap gap-2">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => {
+                                setActiveFilter(cat);
+                                setShowAll(false);
+                            }}
+                            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${activeFilter === cat
+                                ? 'bg-violet-600 text-white shadow-md shadow-violet-500/20'
+                                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-400/50 hover:text-violet-600 dark:hover:text-violet-400'
+                                }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <AnimatePresence>
+                <AnimatePresence mode="popLayout">
                     {projectsToShow.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.title}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ delay: index * 0.05 }}
+                            layout
                             className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:border-violet-400/70 dark:hover:border-violet-500/50 transition-all duration-300 flex flex-col project-card"
                         >
                             {/* Subtle hover aura effect */}
@@ -42,6 +100,7 @@ const Projects = () => {
                                         src={`${import.meta.env.BASE_URL}${project.imageUrl.replace(/^\//, '')}`}
                                         alt={project.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
                                         onError={(e) => { e.target.style.display = 'none'; }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -59,7 +118,7 @@ const Projects = () => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
-                                                title="View Code"
+                                                aria-label={`View ${project.title} source code on GitHub`}
                                             >
                                                 <Github size={20} />
                                             </a>
@@ -70,7 +129,7 @@ const Projects = () => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
-                                                title="Live Demo"
+                                                aria-label={`View ${project.title} live demo`}
                                             >
                                                 <ExternalLink size={20} />
                                             </a>
@@ -81,7 +140,7 @@ const Projects = () => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
-                                                title="UI Design"
+                                                aria-label={`View ${project.title} UI design on Figma`}
                                             >
                                                 <Figma size={20} />
                                             </a>
@@ -114,7 +173,7 @@ const Projects = () => {
             </div>
 
             {/* View More / Show Less Button */}
-            {portfolioData.projects.length > 6 && (
+            {filteredProjects.length > 6 && (
                 <motion.div
                     className="flex justify-center mt-12"
                     initial={{ opacity: 0 }}
