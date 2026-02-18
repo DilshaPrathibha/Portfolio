@@ -1,16 +1,41 @@
-# React + Vite
+# 🌐 Dilsha Prathibha – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with **React** and **Tailwind CSS**, deployed on GitHub Pages.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://dilshaprathibha.github.io/Portfolio](https://dilshaprathibha.github.io/Portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive design with smooth animations (Framer Motion)
+- Sections: Hero, About, Skills, Projects, Contact
+- Project cards with live demo, GitHub, and UI design links
+- Categorized skills display
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19** + **Vite**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Lucide React** (icons)
+- **GitHub Pages** (deployment)
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+## 📬 Contact
+
+- **Email:** dilshaprathibha@gmail.com
+- **GitHub:** [DilshaPrathibha](https://github.com/DilshaPrathibha)
+- **LinkedIn:** [dilshaprathibha](https://www.linkedin.com/in/dilshaprathibha)
