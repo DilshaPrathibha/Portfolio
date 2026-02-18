@@ -19,7 +19,7 @@ const Hero = () => {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-24 pb-16">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
                     {/* Left side — Text content */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
