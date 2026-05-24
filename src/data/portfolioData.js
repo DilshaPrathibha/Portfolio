@@ -71,6 +71,16 @@ export const portfolioData = {
             uiDesignUrl: null,
         },
         {
+            title: "SafeMother – Maternal Health Platform",
+            description: "A full-stack maternal-health web application that supports pregnancy guidance and structured patient communication. Developed patient messaging features, integrated external pregnancy and tips APIs, implemented JWT-based authentication, and built a responsive UI using reusable React components.",
+            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "JWT Authentication", "Axios", "REST APIs", "Vercel", "Railway"],
+            category: "Web",
+            imageUrl: "/images/SafeMother – Maternal Health Platform.png",
+            liveDemo: null,
+            githubUrl: "https://github.com/DilshaPrathibha/SafeMother",
+            uiDesignUrl: null,
+        },
+        {
             title: "SLIIT Marks Analyzer",
             description: "An academic analytics system that automates PDF marks extraction, data cleaning, ranking algorithms, and interactive dashboards for student performance evaluation.",
             techStack: ["Python", "Pandas", "Streamlit", "PyPDF2", "Matplotlib"],
