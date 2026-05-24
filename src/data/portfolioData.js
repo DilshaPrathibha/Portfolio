@@ -76,7 +76,7 @@ export const portfolioData = {
             techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "JWT Authentication", "Axios", "REST APIs", "Vercel", "Railway"],
             category: "Web",
             imageUrl: "/images/SafeMother – Maternal Health Platform.png",
-            liveDemo: null,
+            liveDemo: "https://safe-mother-se-3040.vercel.app",
             githubUrl: "https://github.com/DilshaPrathibha/SafeMother",
             uiDesignUrl: null,
         },
