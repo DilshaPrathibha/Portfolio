@@ -61,16 +61,6 @@ export const portfolioData = {
     ],
     projects: [
         {
-            title: "CeylonLeaf – Tea Plantation Management System",
-            description: "A full-stack web application for managing tea plantation operations. Developed the complete inventory management module including fertilizer and insecticide tracking, supplier validation, automated stock control, tool monitoring, real-time GPS vehicle tracking, and alerts.",
-            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
-            category: "Web",
-            imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
-            liveDemo: "https://ceylonleaf.vercel.app/",
-            githubUrl: "https://github.com/DilshaPrathibha/Tea-Plantation-Management-System",
-            uiDesignUrl: null,
-        },
-        {
             title: "SafeMother – Maternal Health Platform",
             description: "A full-stack maternal-health web application that supports pregnancy guidance and structured patient communication. Developed patient messaging features, integrated external pregnancy and tips APIs, implemented JWT-based authentication, and built a responsive UI using reusable React components.",
             techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "JWT Authentication", "Axios", "REST APIs", "Vercel", "Railway"],
@@ -78,6 +68,16 @@ export const portfolioData = {
             imageUrl: "/images/SafeMother – Maternal Health Platform.png",
             liveDemo: "https://safe-mother-se-3040.vercel.app",
             githubUrl: "https://github.com/DilshaPrathibha/SafeMother",
+            uiDesignUrl: null,
+        },
+        {
+            title: "CeylonLeaf – Tea Plantation Management System",
+            description: "A full-stack web application for managing tea plantation operations. Developed the complete inventory management module including fertilizer and insecticide tracking, supplier validation, automated stock control, tool monitoring, real-time GPS vehicle tracking, and alerts.",
+            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
+            category: "Web",
+            imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
+            liveDemo: "https://ceylonleaf.vercel.app/",
+            githubUrl: "https://github.com/DilshaPrathibha/Tea-Plantation-Management-System",
             uiDesignUrl: null,
         },
         {
