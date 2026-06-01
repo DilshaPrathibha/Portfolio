@@ -6,9 +6,6 @@ export const portfolioData = {
         name: "Dilsha Prathibha",
         title: "Software Engineering Undergraduate | Full-Stack & Mobile Developer",
         bio: "Motivated Software Engineering undergraduate with hands-on experience in full-stack web development, mobile application development, and data-driven systems. Skilled in building scalable, production-ready applications using clean architectures such as MVC and MVVM. Passionate about problem-solving, UI/UX clarity, and learning modern technologies through real-world projects.",
-        // INSTRUCTIONS: 
-        // 1. Place your photo in the 'public/images' folder.
-        // 2. Rename it to 'profile.jpg' (or change the path below).
         profileImage: "/images/profile.png",
         resumeUrl: "https://drive.google.com/uc?export=download&id=1JlmPWX0noTVhxjK7wVfB0s-fwhnEUic_",
     },
@@ -68,6 +65,16 @@ export const portfolioData = {
             imageUrl: "/images/SafeMother – Maternal Health Platform.png",
             liveDemo: "https://safe-mother-se-3040.vercel.app",
             githubUrl: "https://github.com/DilshaPrathibha/SafeMother",
+            uiDesignUrl: null,
+        },
+        {
+            title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
+            description: "A microservices-based healthcare platform for doctor appointments, telemedicine workflows, and automated notifications. Contributed to the appointment and notification microservices — including appointment booking, cancellation, doctor approval checks, service-to-service communication with internal API security, automated email notifications via Nodemailer, SMS support via Twilio, and notification logging with MongoDB persistence.",
+            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
+            category: "Web",
+            imageUrl: null,
+            liveDemo: "https://se-3020-ds-assignment-01.vercel.app/",
+            githubUrl: "https://github.com/Lahiru-360/SE3020-DS-Assignment-01",
             uiDesignUrl: null,
         },
         {
