@@ -10,7 +10,7 @@ export const portfolioData = {
         // 1. Place your photo in the 'public/images' folder.
         // 2. Rename it to 'profile.jpg' (or change the path below).
         profileImage: "/images/profile.png",
-        resumeUrl: "https://drive.google.com/uc?export=download&id=13vctWTPYbtaHgWafvvdGrKu-5CbyBn1V",
+        resumeUrl: "https://drive.google.com/uc?export=download&id=1JlmPWX0noTVhxjK7wVfB0s-fwhnEUic_",
     },
     contact: {
         email: "dilshaprathibha@gmail.com",
