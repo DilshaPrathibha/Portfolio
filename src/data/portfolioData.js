@@ -69,7 +69,7 @@ export const portfolioData = {
         },
         {
             title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
-            description: "A microservices-based healthcare platform for doctor appointments, telemedicine workflows, and automated notifications. Contributed to the appointment and notification microservices — including appointment booking, cancellation, doctor approval checks, service-to-service communication with internal API security, automated email notifications via Nodemailer, SMS support via Twilio, and notification logging with MongoDB persistence.",
+            description: "A microservices-based healthcare platform for doctor appointments and telemedicine workflows. Contributed to the appointment and notification microservices, covering booking lifecycle management, doctor approval checks, internal API security, automated email notifications via Nodemailer, and SMS support via Twilio.",
             techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
             category: "Web",
             imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
