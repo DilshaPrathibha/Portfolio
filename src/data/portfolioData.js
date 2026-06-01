@@ -72,7 +72,7 @@ export const portfolioData = {
             description: "A microservices-based healthcare platform for doctor appointments, telemedicine workflows, and automated notifications. Contributed to the appointment and notification microservices — including appointment booking, cancellation, doctor approval checks, service-to-service communication with internal API security, automated email notifications via Nodemailer, SMS support via Twilio, and notification logging with MongoDB persistence.",
             techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
             category: "Web",
-            imageUrl: null,
+            imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
             liveDemo: "https://se-3020-ds-assignment-01.vercel.app/",
             githubUrl: "https://github.com/Lahiru-360/SE3020-DS-Assignment-01",
             uiDesignUrl: null,
