@@ -41,19 +41,19 @@ export const portfolioData = {
         },
         {
             category: "Backend Development",
-            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication"]
+            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio"]
         },
         {
             category: "Databases",
-            items: ["MongoDB", "MySQL"]
+            items: ["MongoDB", "MySQL", "Mongoose"]
         },
         {
             category: "Tools & Deployment",
-            items: ["Git", "Postman", "Vite", "Vercel", "Render"]
+            items: ["Git", "Postman", "Vite", "Vercel", "Render", "Railway", "Docker", "Docker Compose"]
         },
         {
             category: "Software Engineering Concepts",
-            items: ["MVC", "MVVM", "OOP", "Agile Fundamentals", "Debugging & Testing"]
+            items: ["MVC", "MVVM", "OOP", "Agile Fundamentals", "Debugging & Testing", "Microservices Architecture"]
         }
     ],
     projects: [
