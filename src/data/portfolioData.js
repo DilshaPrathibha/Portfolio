@@ -11,7 +11,7 @@ export const portfolioData = {
     },
     contact: {
         email: "dilshaprathibha@gmail.com",
-        location: "Colombo, Sri Lanka",
+        location: "Malabe, Sri Lanka",
         socials: [
             {
                 name: "GitHub",
@@ -59,7 +59,7 @@ export const portfolioData = {
     projects: [
         {
             title: "SafeMother – Maternal Health Platform",
-            description: "A full-stack maternal-health web application that supports pregnancy guidance and structured patient communication. Developed patient messaging features, integrated external pregnancy and tips APIs, implemented JWT-based authentication, and built a responsive UI using reusable React components.",
+            description: "A full-stack maternal health app supporting pregnancy guidance, patient communication, secure authentication, external pregnancy/tips APIs, messaging features, and a responsive React UI with reusable components.",
             techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "JWT Authentication", "Axios", "REST APIs", "Vercel", "Railway"],
             category: "Web",
             imageUrl: "/images/SafeMother – Maternal Health Platform.png",
@@ -69,7 +69,7 @@ export const portfolioData = {
         },
         {
             title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
-            description: "A microservices-based healthcare platform for doctor appointments and telemedicine workflows. Contributed to the appointment and notification microservices, covering booking lifecycle management, doctor approval checks, internal API security, automated email notifications via Nodemailer, and SMS support via Twilio.",
+            description: "A microservices-based healthcare platform for appointments and telemedicine. Contributed to appointment and notification services, including booking lifecycle, doctor approval, API security, email notifications, and SMS support.",
             techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
             category: "Web",
             imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
@@ -79,7 +79,7 @@ export const portfolioData = {
         },
         {
             title: "CeylonLeaf – Tea Plantation Management System",
-            description: "A full-stack web application for managing tea plantation operations. Developed the complete inventory management module including fertilizer and insecticide tracking, supplier validation, automated stock control, tool monitoring, real-time GPS vehicle tracking, and alerts.",
+            description: "A full-stack tea plantation management system with inventory tracking, fertilizer and insecticide management, supplier validation, stock control, tool monitoring, GPS vehicle tracking, and alerts.",
             techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
             category: "Web",
             imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
@@ -129,7 +129,7 @@ export const portfolioData = {
         },
         {
             title: "HyperZone – Online Smartphone Store",
-            description: "An Android-based online smartphone store application designed to showcase smartphones with structured listings, detailed product views, and smooth navigation. Features product browsing, filtering, comparison, cart functionality with persistent storage, and support for both light and dark modes. Built using MVVM architecture to ensure clean code and maintainability.",
+            description: "An Android smartphone store app with structured product listings, detailed views, smooth navigation, browsing, filtering, comparison, cart with persistent storage, and light/dark mode support. Built with MVVM for clean and maintainable code.",
             techStack: ["Kotlin", "RecyclerView", "SharedPreferences", "Coil / Glide", "MVVM"],
             category: "Mobile",
             imageUrl: "/images/HyperZone – Online Smartphone Store.png",

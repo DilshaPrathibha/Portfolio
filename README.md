@@ -75,4 +75,4 @@ src/
 - **Email:** dilshaprathibha@gmail.com
 - **GitHub:** [DilshaPrathibha](https://github.com/DilshaPrathibha)
 - **LinkedIn:** [dilshaprathibha](https://www.linkedin.com/in/dilshaprathibha)
-- **Location:** Colombo, Sri Lanka
+- **Location:** Malabe, Sri Lanka
