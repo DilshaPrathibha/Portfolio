@@ -234,14 +234,15 @@ const Projects = () => {
                 </AnimatePresence>
             </div>
 
-            {/* View More / Show Less Button */}
-            {filteredProjects.length > 6 && (
-                <motion.div
-                    className="flex justify-center mt-12"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
+            {/* Footer Action Buttons */}
+            <motion.div
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+            >
+                {/* View More / Show Less — only when there are more than 6 filtered results */}
+                {filteredProjects.length > 6 && (
                     <button
                         onClick={() => setShowAll(!showAll)}
                         className="group flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/30 dark:hover:shadow-violet-500/20"
@@ -254,10 +255,23 @@ const Projects = () => {
                             <ChevronDown size={20} />
                         </motion.div>
                     </button>
-                </motion.div>
-            )}
+                )}
+
+                {/* View more on GitHub — always visible */}
+                <a
+                    href={portfolioData.contact.socials.find(s => s.name === 'GitHub')?.url ?? 'https://github.com/DilshaPrathibha'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-violet-500 dark:hover:border-violet-500 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
+                >
+                    <Github size={18} className="group-hover:scale-110 transition-transform" />
+                    <span>View more on GitHub</span>
+                    <ExternalLink size={14} className="opacity-50 group-hover:opacity-100 transition-opacity" />
+                </a>
+            </motion.div>
         </SectionWrapper>
     );
+
 };
 
 export default Projects;
