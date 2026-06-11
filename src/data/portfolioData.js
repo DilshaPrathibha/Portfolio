@@ -41,7 +41,7 @@ export const portfolioData = {
         },
         {
             category: "Backend Development",
-            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio"]
+            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio", "Netlify Functions", "Fetch API"]
         },
         {
             category: "Databases",
@@ -49,7 +49,7 @@ export const portfolioData = {
         },
         {
             category: "Tools & Deployment",
-            items: ["Git", "Postman", "Vite", "Vercel", "Render", "Railway", "Docker", "Docker Compose"]
+            items: ["Git", "Postman", "Vite", "Vercel", "Netlify", "Render", "Railway", "Docker", "Docker Compose", "esbuild"]
         },
         {
             category: "Software Engineering Concepts",
@@ -128,6 +128,16 @@ export const portfolioData = {
             uiDesignUrl: null,
         },
         {
+            title: "Pregnancy Tips API",
+            description: "A free REST API providing pregnancy guidance for all 42 weeks, organized by trimester and category. Built with Node.js serverless functions and paired with an interactive documentation site featuring a live API demo.",
+            techStack: ["Node.js", "Netlify Functions", "JavaScript", "HTML5", "CSS3", "JSON", "REST API", "Fetch API", "npm", "esbuild"],
+            category: "API",
+            imageUrl: "/images/Pregnancy Tips API.png",
+            liveDemo: "https://pregnancytips.netlify.app",
+            githubUrl: "https://github.com/DilshaPrathibha/Pregnancy-Tips-API",
+            uiDesignUrl: null,
+        },
+        {
             title: "HyperZone – Online Smartphone Store",
             description: "An Android smartphone store app with structured product listings, detailed views, smooth navigation, browsing, filtering, comparison, cart with persistent storage, and light/dark mode support. Built with MVVM for clean and maintainable code.",
             techStack: ["Kotlin", "RecyclerView", "SharedPreferences", "Coil / Glide", "MVVM"],
@@ -177,15 +187,6 @@ export const portfolioData = {
             githubUrl: "https://github.com/DilshaPrathibha/Analog-Digital-Clock",
             uiDesignUrl: null,
         },
-        {
-            title: "Pregnancy Tips API",
-            description: "A free REST API providing pregnancy guidance for all 42 weeks, organized by trimester and category. Built with Node.js serverless functions and paired with an interactive documentation site featuring a live API demo.",
-            techStack: ["Node.js", "Netlify Functions", "JavaScript", "HTML5", "CSS3", "JSON", "REST API", "Fetch API", "npm", "esbuild"],
-            category: "API",
-            imageUrl: "/images/Pregnancy Tips API.png",
-            liveDemo: "https://pregnancytips.netlify.app",
-            githubUrl: "https://github.com/DilshaPrathibha/Pregnancy-Tips-API",
-            uiDesignUrl: null,
-        }
+
     ]
 };
