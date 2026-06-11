@@ -2,8 +2,23 @@
 import { useState, useMemo } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { portfolioData } from '../data/portfolioData';
-import { Github, ExternalLink, FolderGit2, Figma, ChevronDown } from 'lucide-react';
+import {
+    Github, ExternalLink, FolderGit2, Figma, ChevronDown,
+    Globe, Smartphone, BarChart2, Plug, Layout, Monitor, Gamepad2, LayoutGrid
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Map every category to an icon + accent color
+const CATEGORY_META = {
+    All:      { icon: LayoutGrid, color: 'text-violet-500' },
+    Web:      { icon: Globe,       color: 'text-sky-500'    },
+    Mobile:   { icon: Smartphone,  color: 'text-emerald-500'},
+    Data:     { icon: BarChart2,   color: 'text-amber-500'  },
+    API:      { icon: Plug,        color: 'text-rose-500'   },
+    Frontend: { icon: Layout,      color: 'text-cyan-500'   },
+    Desktop:  { icon: Monitor,     color: 'text-indigo-500' },
+    Game:     { icon: Gamepad2,    color: 'text-pink-500'   },
+};
 
 const Projects = () => {
     const [showAll, setShowAll] = useState(false);
@@ -58,23 +73,50 @@ const Projects = () => {
                 </motion.p>
 
                 {/* Category Filter Tabs */}
-                <div className="flex flex-wrap gap-2">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => {
-                                setActiveFilter(cat);
-                                setShowAll(false);
-                            }}
-                            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${activeFilter === cat
-                                ? 'bg-violet-600 text-white shadow-md shadow-violet-500/20'
-                                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-400/50 hover:text-violet-600 dark:hover:text-violet-400'
+                <motion.div
+                    className="flex flex-wrap gap-2 justify-center"
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                >
+                    {categories.map((cat) => {
+                        const meta = CATEGORY_META[cat] ?? { icon: FolderGit2, color: 'text-violet-500' };
+                        const Icon = meta.icon;
+                        const count = cat === 'All'
+                            ? portfolioData.projects.length
+                            : portfolioData.projects.filter(p => p.category === cat).length;
+                        const isActive = activeFilter === cat;
+
+                        return (
+                            <button
+                                key={cat}
+                                onClick={() => {
+                                    setActiveFilter(cat);
+                                    setShowAll(false);
+                                }}
+                                className={`group flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                                    isActive
+                                        ? 'bg-violet-600 text-white shadow-md shadow-violet-500/25'
+                                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-400/50 hover:text-violet-600 dark:hover:text-violet-400'
                                 }`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
+                            >
+                                <Icon
+                                    size={14}
+                                    className={isActive ? 'text-white' : meta.color}
+                                />
+                                <span>{cat}</span>
+                                <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold leading-none ${
+                                    isActive
+                                        ? 'bg-white/20 text-white'
+                                        : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                                }`}>
+                                    {count}
+                                </span>
+                            </button>
+                        );
+                    })}
+                </motion.div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
