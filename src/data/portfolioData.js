@@ -6,15 +6,12 @@ export const portfolioData = {
         name: "Dilsha Prathibha",
         title: "Software Engineering Undergraduate | Full-Stack & Mobile Developer",
         bio: "Motivated Software Engineering undergraduate with hands-on experience in full-stack web development, mobile application development, and data-driven systems. Skilled in building scalable, production-ready applications using clean architectures such as MVC and MVVM. Passionate about problem-solving, UI/UX clarity, and learning modern technologies through real-world projects.",
-        // INSTRUCTIONS: 
-        // 1. Place your photo in the 'public/images' folder.
-        // 2. Rename it to 'profile.jpg' (or change the path below).
         profileImage: "/images/profile.png",
-        resumeUrl: "https://drive.google.com/uc?export=download&id=13vctWTPYbtaHgWafvvdGrKu-5CbyBn1V",
+        resumeUrl: "https://drive.google.com/uc?export=download&id=1JlmPWX0noTVhxjK7wVfB0s-fwhnEUic_",
     },
     contact: {
         email: "dilshaprathibha@gmail.com",
-        location: "Colombo, Sri Lanka",
+        location: "Malabe, Sri Lanka",
         socials: [
             {
                 name: "GitHub",
@@ -44,25 +41,45 @@ export const portfolioData = {
         },
         {
             category: "Backend Development",
-            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication"]
+            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio"]
         },
         {
             category: "Databases",
-            items: ["MongoDB", "MySQL"]
+            items: ["MongoDB", "MySQL", "Mongoose"]
         },
         {
             category: "Tools & Deployment",
-            items: ["Git", "Postman", "Vite", "Vercel", "Render"]
+            items: ["Git", "Postman", "Vite", "Vercel", "Render", "Railway", "Docker", "Docker Compose"]
         },
         {
             category: "Software Engineering Concepts",
-            items: ["MVC", "MVVM", "OOP", "Agile Fundamentals", "Debugging & Testing"]
+            items: ["MVC", "MVVM", "OOP", "Agile Fundamentals", "Debugging & Testing", "Microservices Architecture"]
         }
     ],
     projects: [
         {
+            title: "SafeMother – Maternal Health Platform",
+            description: "A full-stack maternal health app supporting pregnancy guidance, patient communication, secure authentication, external pregnancy/tips APIs, messaging features, and a responsive React UI with reusable components.",
+            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "JWT Authentication", "Axios", "REST APIs", "Vercel", "Railway"],
+            category: "Web",
+            imageUrl: "/images/SafeMother – Maternal Health Platform.png",
+            liveDemo: "https://safe-mother-se-3040.vercel.app",
+            githubUrl: "https://github.com/DilshaPrathibha/SafeMother",
+            uiDesignUrl: null,
+        },
+        {
+            title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
+            description: "A microservices-based healthcare platform for appointments and telemedicine. Contributed to appointment and notification services, including booking lifecycle, doctor approval, API security, email notifications, and SMS support.",
+            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
+            category: "Web",
+            imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
+            liveDemo: "https://se-3020-ds-assignment-01.vercel.app/",
+            githubUrl: "https://github.com/Lahiru-360/SE3020-DS-Assignment-01",
+            uiDesignUrl: null,
+        },
+        {
             title: "CeylonLeaf – Tea Plantation Management System",
-            description: "A full-stack web application for managing tea plantation operations. Developed the complete inventory management module including fertilizer and insecticide tracking, supplier validation, automated stock control, tool monitoring, real-time GPS vehicle tracking, and alerts.",
+            description: "A full-stack tea plantation management system with inventory tracking, fertilizer and insecticide management, supplier validation, stock control, tool monitoring, GPS vehicle tracking, and alerts.",
             techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
             category: "Web",
             imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
@@ -112,7 +129,7 @@ export const portfolioData = {
         },
         {
             title: "HyperZone – Online Smartphone Store",
-            description: "An Android-based online smartphone store application designed to showcase smartphones with structured listings, detailed product views, and smooth navigation. Features product browsing, filtering, comparison, cart functionality with persistent storage, and support for both light and dark modes. Built using MVVM architecture to ensure clean code and maintainability.",
+            description: "An Android smartphone store app with structured product listings, detailed views, smooth navigation, browsing, filtering, comparison, cart with persistent storage, and light/dark mode support. Built with MVVM for clean and maintainable code.",
             techStack: ["Kotlin", "RecyclerView", "SharedPreferences", "Coil / Glide", "MVVM"],
             category: "Mobile",
             imageUrl: "/images/HyperZone – Online Smartphone Store.png",
@@ -125,7 +142,7 @@ export const portfolioData = {
             description: "A real-time QR code scanner web application featuring drag & drop support, file upload, custom beep sounds, and scan history. Built with performance and mobile responsiveness in mind.",
             techStack: ["HTML5", "JavaScript", "HTML5-QRCode"],
             category: "Frontend",
-            imageUrl: null,
+            imageUrl: "/images/Real-Time QR Code Scanner.png",
             liveDemo: "https://dilshaprathibha.github.io/Simple-QR-Scanner/",
             githubUrl: "https://github.com/DilshaPrathibha/Simple-QR-Scanner",
             uiDesignUrl: null,
@@ -135,7 +152,7 @@ export const portfolioData = {
             description: "A Windows desktop application that automatically combines videos and images from a folder into a single, perfectly formatted MP4 video using FFmpeg. Supports fixed-length or natural playback.",
             techStack: ["Python", "Tkinter", "FFmpeg"],
             category: "Desktop",
-            imageUrl: null,
+            imageUrl: "/images/AutoFolder VideoMixer.png",
             liveDemo: null,
             githubUrl: "https://github.com/DilshaPrathibha/AutoFolder-VideoMixer",
             uiDesignUrl: null,
@@ -145,7 +162,7 @@ export const portfolioData = {
             description: "A browser-based action game where you collect mystical spirit flames and return them to your base. Features character movement, enemy AI, power-ups, and an achievement system.",
             techStack: ["HTML5", "CSS3", "JavaScript", "Canvas API"],
             category: "Game",
-            imageUrl: null,
+            imageUrl: "/images/Clash of Souls.png",
             liveDemo: "https://dilshaprathibha.github.io/Clash-of-Souls/",
             githubUrl: "https://github.com/DilshaPrathibha/Clash-of-Souls",
             uiDesignUrl: null,
@@ -155,7 +172,7 @@ export const portfolioData = {
             description: "A modern clock interface combining analog and digital displays. Built with HTML5 Canvas for smooth rendering and real-time updates.",
             techStack: ["HTML5 Canvas", "JavaScript"],
             category: "Frontend",
-            imageUrl: null,
+            imageUrl: "/images/Analog + Digital Clock.png",
             liveDemo: "https://dilshaprathibha.github.io/Analog-Digital-Clock/",
             githubUrl: "https://github.com/DilshaPrathibha/Analog-Digital-Clock",
             uiDesignUrl: null,

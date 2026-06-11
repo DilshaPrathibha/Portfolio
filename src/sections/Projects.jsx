@@ -94,18 +94,38 @@ const Projects = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400/5 via-transparent to-purple-400/5 dark:from-violet-500/10 dark:via-transparent dark:to-purple-500/10"></div>
                             </div>
 
-                            {project.imageUrl && (
-                                <div className="h-48 overflow-hidden relative">
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}${project.imageUrl.replace(/^\//, '')}`}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        loading="lazy"
-                                        onError={(e) => { e.target.style.display = 'none'; }}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                </div>
-                            )}
+                            {project.imageUrl && (() => {
+                                const imageLink = project.liveDemo && project.liveDemo !== '#'
+                                    ? project.liveDemo
+                                    : project.uiDesignUrl && project.uiDesignUrl !== '#'
+                                        ? project.uiDesignUrl
+                                        : project.githubUrl;
+                                return (
+                                    <a
+                                        href={imageLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Open ${project.title}`}
+                                        className="block h-48 overflow-hidden relative group/img"
+                                    >
+                                        <img
+                                            src={`${import.meta.env.BASE_URL}${project.imageUrl.replace(/^\//, '')}`}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            loading="lazy"
+                                            onError={(e) => { e.target.style.display = 'none'; }}
+                                        />
+                                        {/* Dark overlay on hover */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        {/* Click hint icon */}
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-3 shadow-lg">
+                                                <ExternalLink size={20} className="text-white" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                );
+                            })()}
                             <div className="p-6 flex-1 flex flex-col relative z-10">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="p-3 bg-violet-100 dark:bg-violet-900/30 rounded-xl text-violet-600 dark:text-violet-400 group-hover:bg-violet-200 dark:group-hover:bg-violet-900/50 transition-colors">
