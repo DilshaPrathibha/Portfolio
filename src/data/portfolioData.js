@@ -176,6 +176,16 @@ export const portfolioData = {
             liveDemo: "https://dilshaprathibha.github.io/Analog-Digital-Clock/",
             githubUrl: "https://github.com/DilshaPrathibha/Analog-Digital-Clock",
             uiDesignUrl: null,
+        },
+        {
+            title: "Pregnancy Tips API",
+            description: "A free REST API providing pregnancy guidance for all 42 weeks, organized by trimester and category. Built with Node.js serverless functions and paired with an interactive documentation site featuring a live API demo.",
+            techStack: ["Node.js", "Netlify Functions", "JavaScript", "HTML5", "CSS3", "JSON", "REST API", "Fetch API", "npm", "esbuild"],
+            category: "API",
+            imageUrl: "/images/Pregnancy Tips API.png",
+            liveDemo: "https://pregnancytips.netlify.app",
+            githubUrl: "https://github.com/DilshaPrathibha/Pregnancy-Tips-API",
+            uiDesignUrl: null,
         }
     ]
 };
