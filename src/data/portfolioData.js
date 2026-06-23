@@ -41,7 +41,7 @@ export const portfolioData = {
         },
         {
             category: "Backend Development",
-            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio"]
+            items: ["Node.js", "Express.js", "Java Servlets & JSP", "RESTful API Development", "JWT Authentication", "Axios", "Nodemailer", "Twilio", "Netlify Functions", "Fetch API"]
         },
         {
             category: "Databases",
@@ -49,7 +49,7 @@ export const portfolioData = {
         },
         {
             category: "Tools & Deployment",
-            items: ["Git", "Postman", "Vite", "Vercel", "Render", "Railway", "Docker", "Docker Compose"]
+            items: ["Git", "Postman", "Vite", "Vercel", "Netlify", "Render", "Railway", "Docker", "Docker Compose", "Kubernetes", "RabbitMQ", "Trello", "esbuild"]
         },
         {
             category: "Software Engineering Concepts",
@@ -70,7 +70,7 @@ export const portfolioData = {
         {
             title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
             description: "A microservices-based healthcare platform for appointments and telemedicine. Contributed to appointment and notification services, including booking lifecycle, doctor approval, API security, email notifications, and SMS support.",
-            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
+            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "Kubernetes", "RabbitMQ", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
             category: "Web",
             imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
             liveDemo: "https://se-3020-ds-assignment-01.vercel.app/",
@@ -80,7 +80,7 @@ export const portfolioData = {
         {
             title: "CeylonLeaf – Tea Plantation Management System",
             description: "A full-stack tea plantation management system with inventory tracking, fertilizer and insecticide management, supplier validation, stock control, tool monitoring, GPS vehicle tracking, and alerts.",
-            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
+            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication", "Trello"],
             category: "Web",
             imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
             liveDemo: "https://ceylonleaf.vercel.app/",
@@ -125,6 +125,16 @@ export const portfolioData = {
             imageUrl: "/images/SoulFlow – Wellness Tracking Android Application.png",
             liveDemo: null,
             githubUrl: "https://github.com/DilshaPrathibha/SoulFlow-Mobile-Application",
+            uiDesignUrl: null,
+        },
+        {
+            title: "Pregnancy Tips API",
+            description: "A free REST API providing pregnancy guidance for all 42 weeks, organized by trimester and category. Built with Node.js serverless functions and paired with an interactive documentation site featuring a live API demo.",
+            techStack: ["Node.js", "Netlify Functions", "JavaScript", "HTML5", "CSS3", "JSON", "REST API", "Fetch API", "npm", "esbuild"],
+            category: "API",
+            imageUrl: "/images/Pregnancy Tips API.png",
+            liveDemo: "https://pregnancytips.netlify.app",
+            githubUrl: "https://github.com/DilshaPrathibha/Pregnancy-Tips-API",
             uiDesignUrl: null,
         },
         {
@@ -176,6 +186,7 @@ export const portfolioData = {
             liveDemo: "https://dilshaprathibha.github.io/Analog-Digital-Clock/",
             githubUrl: "https://github.com/DilshaPrathibha/Analog-Digital-Clock",
             uiDesignUrl: null,
-        }
+        },
+
     ]
 };

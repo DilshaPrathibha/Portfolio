@@ -2,8 +2,23 @@
 import { useState, useMemo } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { portfolioData } from '../data/portfolioData';
-import { Github, ExternalLink, FolderGit2, Figma, ChevronDown } from 'lucide-react';
+import {
+    Github, ExternalLink, FolderGit2, Figma, ChevronDown,
+    Globe, Smartphone, BarChart2, Plug, Layout, Monitor, Gamepad2, LayoutGrid
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Map every category to an icon + accent color
+const CATEGORY_META = {
+    All:      { icon: LayoutGrid, color: 'text-violet-500' },
+    Web:      { icon: Globe,       color: 'text-sky-500'    },
+    Mobile:   { icon: Smartphone,  color: 'text-emerald-500'},
+    Data:     { icon: BarChart2,   color: 'text-amber-500'  },
+    API:      { icon: Plug,        color: 'text-rose-500'   },
+    Frontend: { icon: Layout,      color: 'text-cyan-500'   },
+    Desktop:  { icon: Monitor,     color: 'text-indigo-500' },
+    Game:     { icon: Gamepad2,    color: 'text-pink-500'   },
+};
 
 const Projects = () => {
     const [showAll, setShowAll] = useState(false);
@@ -58,23 +73,50 @@ const Projects = () => {
                 </motion.p>
 
                 {/* Category Filter Tabs */}
-                <div className="flex flex-wrap gap-2">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => {
-                                setActiveFilter(cat);
-                                setShowAll(false);
-                            }}
-                            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${activeFilter === cat
-                                ? 'bg-violet-600 text-white shadow-md shadow-violet-500/20'
-                                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-400/50 hover:text-violet-600 dark:hover:text-violet-400'
+                <motion.div
+                    className="flex flex-wrap gap-2 justify-center"
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                >
+                    {categories.map((cat) => {
+                        const meta = CATEGORY_META[cat] ?? { icon: FolderGit2, color: 'text-violet-500' };
+                        const Icon = meta.icon;
+                        const count = cat === 'All'
+                            ? portfolioData.projects.length
+                            : portfolioData.projects.filter(p => p.category === cat).length;
+                        const isActive = activeFilter === cat;
+
+                        return (
+                            <button
+                                key={cat}
+                                onClick={() => {
+                                    setActiveFilter(cat);
+                                    setShowAll(false);
+                                }}
+                                className={`group flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                                    isActive
+                                        ? 'bg-violet-600 text-white shadow-md shadow-violet-500/25'
+                                        : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-violet-400/50 hover:text-violet-600 dark:hover:text-violet-400'
                                 }`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
+                            >
+                                <Icon
+                                    size={14}
+                                    className={isActive ? 'text-white' : meta.color}
+                                />
+                                <span>{cat}</span>
+                                <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold leading-none ${
+                                    isActive
+                                        ? 'bg-white/20 text-white'
+                                        : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                                }`}>
+                                    {count}
+                                </span>
+                            </button>
+                        );
+                    })}
+                </motion.div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -192,14 +234,15 @@ const Projects = () => {
                 </AnimatePresence>
             </div>
 
-            {/* View More / Show Less Button */}
-            {filteredProjects.length > 6 && (
-                <motion.div
-                    className="flex justify-center mt-12"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
+            {/* Footer Action Buttons */}
+            <motion.div
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+            >
+                {/* View More / Show Less — only when there are more than 6 filtered results */}
+                {filteredProjects.length > 6 && (
                     <button
                         onClick={() => setShowAll(!showAll)}
                         className="group flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/30 dark:hover:shadow-violet-500/20"
@@ -212,10 +255,23 @@ const Projects = () => {
                             <ChevronDown size={20} />
                         </motion.div>
                     </button>
-                </motion.div>
-            )}
+                )}
+
+                {/* View more on GitHub — always visible */}
+                <a
+                    href={portfolioData.contact.socials.find(s => s.name === 'GitHub')?.url ?? 'https://github.com/DilshaPrathibha'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-violet-500 dark:hover:border-violet-500 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
+                >
+                    <Github size={18} className="group-hover:scale-110 transition-transform" />
+                    <span>View more on GitHub</span>
+                    <ExternalLink size={14} className="opacity-50 group-hover:opacity-100 transition-opacity" />
+                </a>
+            </motion.div>
         </SectionWrapper>
     );
+
 };
 
 export default Projects;

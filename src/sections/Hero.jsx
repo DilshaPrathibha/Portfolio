@@ -3,9 +3,16 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import SectionWrapper from '../components/SectionWrapper';
 import { ArrowRight, FileDown } from 'lucide-react';
+import useCountUp from '../hooks/useCountUp';
 
 const Hero = () => {
     const { name, title, resumeUrl, profileImage } = portfolioData.personalInfo;
+
+    const projectCount = portfolioData.projects.length;
+    const techCount = portfolioData.skills.reduce((acc, cat) => acc + cat.items.length, 0);
+
+    const { ref: projectsRef, count: projectsCount } = useCountUp(projectCount, 1600);
+    const { ref: techRef, count: techAnimCount } = useCountUp(techCount, 2000);
 
     return (
         <section
@@ -109,16 +116,16 @@ const Hero = () => {
                             transition={{ delay: 0.55 }}
                             className="mt-12 flex items-center gap-10 justify-center lg:justify-start"
                         >
-                            <div>
+                            <div ref={projectsRef}>
                                 <p className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-                                    {portfolioData.projects.length}<span className="text-violet-500">+</span>
+                                    {projectsCount}<span className="text-violet-500">+</span>
                                 </p>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Projects Completed</p>
                             </div>
                             <div className="w-px h-12 bg-slate-200 dark:bg-slate-800" />
-                            <div>
+                            <div ref={techRef}>
                                 <p className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-                                    {portfolioData.skills.reduce((acc, cat) => acc + cat.items.length, 0)}<span className="text-violet-500">+</span>
+                                    {techAnimCount}<span className="text-violet-500">+</span>
                                 </p>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Technologies</p>
                             </div>
