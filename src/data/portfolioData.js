@@ -49,7 +49,7 @@ export const portfolioData = {
         },
         {
             category: "Tools & Deployment",
-            items: ["Git", "Postman", "Vite", "Vercel", "Netlify", "Render", "Railway", "Docker", "Docker Compose", "esbuild"]
+            items: ["Git", "Postman", "Vite", "Vercel", "Netlify", "Render", "Railway", "Docker", "Docker Compose", "Kubernetes", "RabbitMQ", "Trello", "esbuild"]
         },
         {
             category: "Software Engineering Concepts",
@@ -70,7 +70,7 @@ export const portfolioData = {
         {
             title: "CareLink – Smart Healthcare Appointment & Telemedicine Platform",
             description: "A microservices-based healthcare platform for appointments and telemedicine. Contributed to appointment and notification services, including booking lifecycle, doctor approval, API security, email notifications, and SMS support.",
-            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
+            techStack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Docker", "Docker Compose", "Kubernetes", "RabbitMQ", "JWT Authentication", "API Gateway", "Axios", "Nodemailer", "Twilio", "REST APIs"],
             category: "Web",
             imageUrl: "/images/CareLink – Smart Healthcare Appointment & Telemedicine Platform.png",
             liveDemo: "https://se-3020-ds-assignment-01.vercel.app/",
@@ -80,7 +80,7 @@ export const portfolioData = {
         {
             title: "CeylonLeaf – Tea Plantation Management System",
             description: "A full-stack tea plantation management system with inventory tracking, fertilizer and insecticide management, supplier validation, stock control, tool monitoring, GPS vehicle tracking, and alerts.",
-            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication"],
+            techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Leaflet", "JWT Authentication", "Trello"],
             category: "Web",
             imageUrl: "/images/CeylonLeaf – Tea Plantation Management System.PNG",
             liveDemo: "https://ceylonleaf.vercel.app/",
